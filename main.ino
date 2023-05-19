@@ -93,6 +93,7 @@ else Serial.println("error starting temperature measurement\n");
  
  
 int rain = analogRead(A0);
+rain = map(rain, 0, 1024, 0, 100);
  
 //Create JSON data
 String data = "{\"Rain\":\""+String(rain)+"\",\"Pressuremb\":\""+String(pmb)+"\",\"Pressurehg\":\""+String(phg)+"\", \"Temperature\":\""+ String(temperature) +"\", \"Humidity\":\""+ String(humidity) +"\"}";
